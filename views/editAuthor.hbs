@@ -1,0 +1,19 @@
+<h2 class="form-title">Editar autor A:{{author_id}}</h2>
+<form action="/authors/save/{{author_id}}" method="POST" class="form">
+  <div class="form-field">
+    <label for="author-name">
+      > Nombres</label>
+    <input type="text" name="name" id="author-name" required value="{{name}}">
+  </div>
+  <div class="form-field">
+    <label for="author-nationality">
+      > Nacionalidad</label>
+    <input type="text" name="nationality" id="author-nationality" required value="{{nationality}}">
+  </div>
+  <div class="form-field">
+    <label for="author-birth">
+      > Fecha de nacimiento</label>
+    <input type="date" name="date_birth" id="author-birth" required value="{{date_birth}}">
+  </div>
+  <button class="form-btn-submit">Actualizar</button>
+</form>

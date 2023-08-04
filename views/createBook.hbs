@@ -1,0 +1,27 @@
+<h2 class="form-title">Agregar nuevo libro</h2>
+<form action="/books" method="POST" class="form">
+  <div class="form-field">
+    <label for="book-title">
+      > Título</label>
+    <input type="text" name="title" id="book-title" required>
+  </div>
+  <div class="form-field">
+    <label for="book-genre">
+      > Género</label>
+    <input type="text" name="genre" id="book-genre" required>
+  </div>
+  <div class="form-field">
+    <label for="book-publication">
+      > Fecha de publicación</label>
+    <input type="date" name="date_publication" id="book-publication" required>
+  </div>
+  <div class="form-field">
+    <label for="book-author">> Autor</label>
+    <select name="author_id" id="book-author" required>
+      {{#each authors}}
+        <option value="{{this.author_id}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <button class="form-btn-submit">Agregar</button>
+</form>

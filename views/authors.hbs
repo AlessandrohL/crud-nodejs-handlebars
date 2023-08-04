@@ -1,0 +1,37 @@
+<h2 class="authors-section-title">Administrar Autores</h2>
+  <section class="as-options">
+    <a href="/authors/create">Agregar +</a>
+  </section>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Nacionalidad</th>
+        <th>Fecha de nacimiento</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each authors}}
+      <tr>
+        <td>{{this.author_id}}</td>
+        <td>{{this.name}}</td>
+        <td>{{this.nationality}}</td>
+        <td>{{this.date_birth}}</td>
+        <td class="actions-column">
+          <button class="action-detail-btn" data-id={{this.author_id}}>
+            <i class="bi bi-journals" data-id={{this.author_id}}></i>
+          </button>
+          <button class="action-edit-btn" data-id={{this.author_id}} data-entity="authors">
+            <i data-id={{this.author_id}} class="bi bi-pencil-square" data-entity="authors"></i>
+          </button>
+          <button class="action-delete-btn" data-id={{this.author_id}} data-entity="authors">
+            <i class="bi bi-trash2-fill" data-id={{this.author_id}} data-entity="authors"></i>
+          </button>
+        </td>
+      </tr>
+      {{/each}}
+    
+    </tbody>
+  </table>

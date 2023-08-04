@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pasos</title>
+		<style>
+			:root {
+				--dark-hard: #202121;
+				--dark-medium: #292828;
+				--dark-low: #32302f;
+				--text: #d4be98;
+				--purple: #d3869b;
+				--yellow: #fabd2f;
+				--green: #9ec07c;
+				--blue: #83a598;
+				--red: #fb4934;
+			}
+
+			* {
+				font-family: 'Segoe UI', sans-serif;
+			}
+
+			ul {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+
+			li {
+				color: var(--text);
+				font-size: 1.2rem;
+			}
+
+			body {
+				background-color: var(--dark-medium);
+			}
+
+			header {
+				width: 100%;
+				text-align: center;
+				font-size: 2rem;
+				font-weight: bold;
+				color: var(--yellow);
+				padding-top: 30px;
+			}
+
+			main {
+				width: 80%;
+				margin: 100px auto;
+				/* margin: 100px; */
+			}
+
+			p {
+				color: var(--text);
+				font-size: 1.2rem;
+			}
+
+			.restore-bd h2 {
+				color: var(--green);
+				padding-bottom: 20px;
+				border-bottom: 3px solid var(--green);
+				margin: 30px 0;
+			}
+
+			.restore-bd img {
+				width: 100%;
+				margin: 0 auto;
+			}
+
+			.restore-bd p {
+				display: flex;
+				gap: 20px;
+			}
+
+			.restore-bd p strong {
+				color: var(--red);
+			}
+		</style>
+	</head>
+	<body>
+		<header>Pasos para levantar el proyecto</header>
+		<main>
+			<section class="restore-bd">
+				<h2>Restauración de la Base de datos</h2>
+				<p>
+					En la pestaña de importación, selecciona "Import from Self-Contained
+					File" y busca el archivo "backup-db-books.sql" en tu directorio.
+				</p>
+				<img src="./db-restore/1.png" alt="" />
+				<br />
+				<br />
+				<p>
+					<strong>IMPORTANTE</strong>
+					Asegúrate de crear una nueva base de datos haciendo clic en el botón
+					"New".
+				</p>
+				<img src="./db-restore/2.png" alt="" />
+				<br />
+				<br />
+				<p>El nombre de la base de datos a crear es "db_books_node"</p>
+				<img src="./db-restore/3.png" alt="" />
+				<br /><br />
+				<p style="font-size: 1.4rem; color: var(--purple)">
+					Ahora ya puedes darle al boton "Import data" &check;
+				</p>
+				<br /><br />
+				<h2>Configuración de la conexión a la BD</h2>
+				<p>
+					En la raiz del proyecto se encuentra el archivo ".env", aqui es donde
+					se configurará la conexión a MySql
+				</p>
+				<ul>
+					<li>DB_HOST = localhost</li>
+					<li>DB_PORT = 3306</li>
+					<li>DB_NAME = db_books_node</li>
+					<li>DB_USER = root</li>
+					<li>DB_PASS = (Ingresar tu contraseña)</li>
+				</ul>
+				<br />
+				<h2>Levantar el proyecto</h2>
+				<p>Usar el comando "<code>npm run dev</code>"</p>
+			</section>
+		</main>
+	</body>
+</html>

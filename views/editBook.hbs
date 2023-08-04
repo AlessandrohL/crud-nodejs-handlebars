@@ -1,0 +1,41 @@
+<h2 class="form-title">Editar libro B:{{book_id}}</h2>
+<form action="/books/save/{{book_id}}" method="POST" class="form">
+  <div class="form-field">
+    <label for="book-title">
+      > Título</label>
+    <input type="text" name="title" id="book-title" value="{{title}}" required>
+  </div>
+  <div class="form-field">
+    <label for="book-genre">
+      > Género</label>
+    <input type="text" name="genre" id="book-genre" value="{{genre}}" required>
+  </div>
+  <div class="form-field">
+    <label for="book-publication">
+      > Fecha de publicación</label>
+    <input type="date" name="date_publication" id="book-publication" value="{{date_publication}}" required>
+  </div>
+  <div class="form-field">
+    <label for="book-author">> Autor</label>
+    <input type="hidden" value="{{author_id}}" id="author-id-selected">
+    <select name="author_id" id="book-author" required>
+      {{#each authors}}
+        <option value="{{this.author_id}}">
+          {{this.name}}
+        </option>
+      {{/each}}
+    </select>
+  </div>
+  <button class="form-btn-submit">Actualizar</button>
+</form>
+<script>
+  const selectedAuthor = document.querySelector('#author-id-selected').value
+  const select = document.querySelector('#book-author')
+  const options = Array.from(select.children)
+  options.forEach(option => {
+    if (option.value === selectedAuthor) {
+      option.selected = true
+    }
+  })
+
+</script>

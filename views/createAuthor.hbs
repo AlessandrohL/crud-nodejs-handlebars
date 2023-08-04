@@ -1,0 +1,19 @@
+<h2 class="form-title">Agregar nuevo autor</h2>
+<form action="/authors" method="POST" class="form">
+  <div class="form-field">
+    <label for="author-name">
+      > Nombres</label>
+    <input type="text" name="name" id="author-name" required>
+  </div>
+  <div class="form-field">
+    <label for="author-nationality">
+      > Nacionalidad</label>
+    <input type="text" name="nationality" id="author-nationality" required>
+  </div>
+  <div class="form-field">
+    <label for="author-birth">
+      > Fecha de nacimiento</label>
+    <input type="date" name="date_birth" id="author-birth" required>
+  </div>
+  <button class="form-btn-submit">Agregar</button>
+</form>

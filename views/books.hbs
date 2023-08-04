@@ -1,0 +1,35 @@
+<h2 class="authors-section-title">Administrar Libros</h2>
+  <section class="as-options">
+    <a href="/books/create">Agregar +</a>
+  </section>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Género</th>
+        <th>Fecha de publicación</th>
+        <th>Author ID</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each books}}
+      <tr>
+        <td>{{this.book_id}}</td>
+        <td>{{this.title}}</td>
+        <td>{{this.genre}}</td>
+        <td>{{this.date_publication}}</td>
+        <td>{{this.author_id}}</td>
+        <td class="actions-column">
+          <button class="action-edit-btn" data-id={{this.book_id}} data-entity="books">
+            <i data-id={{this.book_id}} class="bi bi-pencil-square" data-entity="books"></i>
+          </button>
+          <button class="action-delete-btn" data-id={{this.book_id}} data-entity="books">
+            <i class="bi bi-trash2-fill" data-id={{this.book_id}} data-entity="books"></i>
+          </button>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
